@@ -28,10 +28,10 @@
                 onScanError: function (error) {
                     console.error("Scan error:", error);
                 },
-                minLength: 8,  // Minimum barcode length
-                //reactToKeydown: false, // No Keydown Events
-		//reactToPaste: true, // ReactToPasted Content As Well As Scan
-                //timeBeforeScanTest: 200,  // Time before considering input as barcode
+                minLength: 3,  // Minimum barcode length
+                reactToKeydown: false, // No Keydown Events
+		reactToPaste: true, // ReactToPasted Content As Well As Scan
+                timeBeforeScanTest: 200,  // Time before considering input as barcode
                 keyCodeReducer: function (keyCode) {
                     return String.fromCharCode(keyCode); // Converts keyCode to character
                 }
