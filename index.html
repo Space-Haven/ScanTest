@@ -27,10 +27,9 @@
                 },
                 onScanError: function (error) {
                     console.error("Scan error:", error);
-		    alert("Scan error:", error);
                 },
                 minLength: 3,  // Minimum barcode length
-                reactToKeydown: false, // No Keydown Events
+                reactToKeydown: true, // No Keydown Events
 		reactToPaste: true, // ReactToPasted Content As Well As Scan
                 timeBeforeScanTest: 200,  // Time before considering input as barcode
                 keyCodeReducer: function (keyCode) {
