@@ -41,7 +41,8 @@
 		    switch(scanType) {
   			case "product":
     				console.log("You Scanned Product " + scanBarcode + " on page " + thisRoute);
-				console.log("https://admin.routeique.com/spacehaven/products?filter%5Bname%5D=" + scanBarcode);
+				//console.log("https://admin.routeique.com/spacehaven/products?filter%5Bname%5D=" + scanBarcode);
+				window.location.replace("https://admin.routeique.com/spacehaven/products?filter%5Bname%5D=" + scanBarcode);
     			break;
   			case "location":
     				console.log("You Scanned Location " + scanBarcode + " on page " + thisRoute);
