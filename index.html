@@ -11,7 +11,7 @@
 <body>
 
     <h1>Space Haven - Scan Test</h1>
-    <h3>Version 1.3.4</h3>
+    <h3>Version 1.3.5</h3>
     <form id="scan-form" action="https://space-haven.github.io/ScanTest/" method="POST">
         <label for="barcode">Scanned Code:</label>
         <input type="text" id="barcode" name="barcode" data-rt-scan="code" required>
@@ -39,8 +39,8 @@
 		    var jsonPayload = JSON.parse(scannedData);
                     console.log(jsonPayload);
 
-		    encryptedPayload = scanEncrypt(payLoad);
-		    console.log(encryptedPayload);
+		    encryptedPayload = scanEncrypt(scannedData);
+		    console.log("Encrypted: " + encryptedPayload);
 			
 		    var scanBarcode = jsonPayload.code;
 		    var scanType = jsonPayload.type;
