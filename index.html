@@ -20,15 +20,18 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+	    var thisRoute = window.location.pathname;
+	    console.log("ROUTE: " + thisRoute);
+		
             onScan.attachTo(document, {
                 onScan: function (scannedData) {
-
-		    var thisRoute = window.location.pathname;
-		    console.log("ROUTE: " + thisRoute);
 			
                     let inputField = document.getElementById("barcode");
                     inputField.value = scannedData;
-                    
+			
+		    var jsonPayload = JSON.parse(scannedData);
+                    console.log(jsonPayload);
+			
                     // Auto-submit the form
                     document.getElementById("scan-form").submit();
 		    alert(document.getElementById('barcode').value);
