@@ -14,7 +14,7 @@
     <h3>Version 1.1.6</h3>
     <form id="scan-form" action="https://space-haven.github.io/ScanTest/" method="POST">
         <label for="barcode">Scanned Code:</label>
-        <input type="text" id="barcode" name="barcode" required>
+        <input type="text" id="barcode" name="barcode" data-rt-scan="code" required>
         <button type="submit">Submit</button>
     </form>
 
@@ -26,16 +26,30 @@
             onScan.attachTo(document, {
                 onScan: function (scannedData) {
 			
-                    let inputField = document.getElementById("barcode");
-                    inputField.value = scannedData;
-			
 		    var jsonPayload = JSON.parse(scannedData);
                     console.log(jsonPayload);
-		    var barcode = jsonPayload.code;
-		    var type = jsonPayload.type;
+		    var scanBarcode = jsonPayload.code;
+		    var scanType = jsonPayload.type;
 
-		    console.log("BARCODE: " + barcode);
-		    console.log("TYPE: " + type);
+		    console.log("BARCODE: " + scanBarcode);
+		    console.log("TYPE: " + scanType);
+
+		    let inputField = document.getElementById("scanBarcode");
+                    inputField.value = scanBarcode;
+
+		    switch(scanType) {
+  			case "product":
+    				console.log("You Scanned Product " + scanBarCode);
+    			break;
+  			case "location":
+    				console.log("You Scanned Location " + scanBarCode);
+    			break;
+		        case "dockDoor":
+    				console.log("You Scanned Dock Door " + scanBarCode);
+    			break;
+  			default:
+    				// code block
+			}
 			
                     // Auto-submit the form
                     //document.getElementById("scan-form").submit();
