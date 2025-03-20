@@ -11,7 +11,7 @@
 <body>
 
     <h1>Space Haven - Scan Test</h1>
-    <h3>Version 1.1.5</h3>
+    <h3>Version 1.1.6</h3>
     <form id="scan-form" action="https://space-haven.github.io/ScanTest/" method="POST">
         <label for="barcode">Scanned Code:</label>
         <input type="text" id="barcode" name="barcode" required>
@@ -35,6 +35,7 @@
 		    var type = jsonPayload.type;
 
 		    console.log("BARCODE: " + barcode);
+		    console.log("TYPE: " + type);
 			
                     // Auto-submit the form
                     //document.getElementById("scan-form").submit();
