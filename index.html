@@ -23,10 +23,8 @@
             onScan.attachTo(document, {
                 onScan: function (scannedData) {
 
-		    var scripts = document.getElementsByTagName('script');
-		    var lastScript = scripts[scripts.length-1];
-                    var scriptName = lastScript.src;
-                    alert("loading: " + scriptName);
+		    var thisRoute = window.location.pathname;
+		    console.log(thisRoute);
 			
                     let inputField = document.getElementById("barcode");
                     inputField.value = scannedData;
