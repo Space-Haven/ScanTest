@@ -45,7 +45,7 @@
 	    let thisRoute = thisRouteRaw.replaceAll("/", "");
 	    console.log("ROUTE: " + thisRoute);
 		
-            onScan.attachTo(document), {
+            onScan.attachTo(document, {
                 onScan: function (scannedData) {
 			
 		    var jsonPayload = JSON.parse(scannedData);
