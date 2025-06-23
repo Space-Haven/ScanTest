@@ -89,7 +89,7 @@
                 },
                 minLength: 3,  // Minimum barcode length
                 reactToKeydown: true, // No Keydown Events
-		reactToPaste: false, // ReactToPasted Content As Well As Scan
+		reactToPaste: true, // ReactToPasted Content As Well As Scan
                 timeBeforeScanTest: 200,  // Time before considering input as barcode
                 keyCodeReducer: function (keyCode) {
                     return String.fromCharCode(keyCode); // Converts keyCode to character
