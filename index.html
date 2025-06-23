@@ -12,7 +12,7 @@
 <body>
 
     <h1>Space Haven - Scan Test</h1>
-    <h3>Version 1.4.3</h3>
+    <h3>Version 1.4.4</h3>
     <form id="scan-form" action="https://space-haven.github.io/ScanTest/" method="POST">
         <label for="barcode">Scanned Code:</label>
         <input type="text" id="barcode" name="barcode" data-rt-scan="code" required>
@@ -89,7 +89,7 @@
                 },
                 minLength: 3,  // Minimum barcode length
                 reactToKeydown: true, // No Keydown Events
-		reactToPaste: true, // ReactToPasted Content As Well As Scan
+		reactToPaste: false, // ReactToPasted Content As Well As Scan
                 timeBeforeScanTest: 200,  // Time before considering input as barcode
                 keyCodeReducer: function (keyCode) {
                     return String.fromCharCode(keyCode); // Converts keyCode to character
